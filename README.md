@@ -82,10 +82,10 @@ In this heatmap, darker colors represent higher attention weights. The model is 
 ### Performance Metrics
 After training the model for 10, the model achieved the following performance on the validation set:
 
-Validation Loss: 0.788
-Exact Match (EM): 64.8%
-F1 Score: 83.3%
-These metrics indicate the model's ability to predict the correct answer spans.
+Validation Loss: 0.788  
+Exact Match (EM): 64.8%  
+F1 Score: 83.3%  
+These metrics indicate the model's ability to predict the correct answer spans.  
 
 
 ## Acklowedgements
