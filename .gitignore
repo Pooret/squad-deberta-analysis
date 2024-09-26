@@ -1,0 +1,79 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+.env/
+.venv/
+
+# macOS specific files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Python packages
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+*.egg-info
+.installed.cfg
+*.egg
+
+# Installers
+*.lock
+*.log
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+test-results.xml
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Data directories
+data/raw/
+data/processed/
+
+# Models and large files (Will change once pre-trained model is finished)
+models/
+models/experiment_1/best_model/
+
+# WandB files 
+wandb/
+wandb/latest-run
+wandb/debug-internal.log
+wandb/debug.log
+
+# Ignore secret files and configuration (will change once pre-trained model is finished)
+config.yaml
+secrets/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Output files from scripts
+*.out
+*.log
+
+# Directory listings
+directory.txt

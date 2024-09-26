@@ -15,8 +15,19 @@ from src.utils import save_model
 
 def main():
     
+    while True:
+        experiment_name = input("Enter an experiment name: e.g. experiment_1: ")
+        if os.path.exists(f"models/{experiment_name}"):
+            print("Experiment name already exists. Please enter a different name.")
+        else:
+            break
+    print(f"Creating a new experiment: {experiment_name}\n")
+    print(f"models and visualizations will be saved to models/{experiment_name}")    
+    
     with open('config.yaml', 'r') as file:
         config = yaml.safe_load(file)
+        
+    config['best_model_path'] = f"./models/{experiment_name}/best_model"
     print(config)
     
     # set the device
