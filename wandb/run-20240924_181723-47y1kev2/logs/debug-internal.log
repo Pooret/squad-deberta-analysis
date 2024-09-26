@@ -1,0 +1,18 @@
+{"time":"2024-09-24T18:17:23.107339-04:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-24T18:17:23.107394-04:00","level":"INFO","msg":"created symlink","path":"/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/wandb/run-20240924_181723-47y1kev2/logs/debug-core.log"}
+{"time":"2024-09-24T18:17:23.107512-04:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-24T18:17:23.107524-04:00","level":"INFO","msg":"created symlink","path":"/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/wandb/run-20240924_181723-47y1kev2/logs/debug-core.log"}
+{"time":"2024-09-24T18:17:23.112756-04:00","level":"INFO","msg":"created new stream","id":"47y1kev2"}
+{"time":"2024-09-24T18:17:23.112793-04:00","level":"INFO","msg":"stream: started","id":"47y1kev2"}
+{"time":"2024-09-24T18:17:23.11281-04:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"47y1kev2"}}
+{"time":"2024-09-24T18:17:23.112866-04:00","level":"INFO","msg":"sender: started","stream_id":{"value":"47y1kev2"}}
+{"time":"2024-09-24T18:17:23.11285-04:00","level":"INFO","msg":"handler: started","stream_id":{"value":"47y1kev2"}}
+{"time":"2024-09-24T18:17:23.365123-04:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-24T18:17:23.367791-04:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-24T18:17:23.42492-04:00","level":"INFO","msg":"stream: closing","id":"47y1kev2"}
+{"time":"2024-09-24T18:17:23.424945-04:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-24T18:17:23.42498-04:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-24T18:17:24.111612-04:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"47y1kev2"}}
+{"time":"2024-09-24T18:17:24.111597-04:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"47y1kev2"}}
+{"time":"2024-09-24T18:17:24.111607-04:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"47y1kev2"}}
+{"time":"2024-09-24T18:17:24.112002-04:00","level":"INFO","msg":"stream: closed","id":"47y1kev2"}

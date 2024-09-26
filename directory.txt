@@ -1,0 +1,44 @@
+.
+├── README.md
+├── config.yaml
+├── data
+│   ├── processed
+│   └── raw
+├── directory.txt
+├── models
+│   └── experiment_1
+├── notebooks
+│   └── squad_deberta_attentions.ipynb
+├── requirements.txt
+├── scripts
+│   ├── interactive_attention_analysis.py
+│   └── run_experiment.py
+├── setup.py
+├── src
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── attention_analysis.py
+│   ├── data_loading.py
+│   ├── evaluate.py
+│   ├── model.py
+│   ├── train.py
+│   └── utils.py
+├── tests
+│   ├── __init__.py
+│   └── test_functions.py
+└── wandb
+    ├── debug-internal.log -> run-20240924_213722-510otpt3/logs/debug-internal.log
+    ├── debug.log -> run-20240924_213722-510otpt3/logs/debug.log
+    ├── latest-run -> run-20240924_213722-510otpt3
+    ├── offline-run-20240924_144718-8415rsee
+    ├── offline-run-20240924_145224-o5phgfxl
+    ├── run-20240924_145427-yz9ncgls
+    ├── run-20240924_181620-q6q47g40
+    ├── run-20240924_181723-47y1kev2
+    ├── run-20240924_181935-sv11t4l3
+    ├── run-20240924_182019-hn448tuq
+    ├── run-20240924_182240-alud6qma
+    ├── run-20240924_182729-8w17jesg
+    └── run-20240924_213722-510otpt3
+
+23 directories, 19 files

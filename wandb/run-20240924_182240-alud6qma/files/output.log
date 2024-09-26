@@ -1,0 +1,19 @@
+Epoch 1/10 Training:   0%|                                                                                                                                                                    | 0/157 [00:00<?, ?it/s]/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/.venv/lib/python3.11/site-packages/torch/utils/checkpoint.py:295: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with torch.enable_grad(), device_autocast_ctx, torch.cpu.amp.autocast(**ctx.cpu_autocast_kwargs):  # type: ignore[attr-defined]
+Epoch 1/10 Training:   0%|                                                                                                                                                                    | 0/157 [00:04<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/scripts/run_experiment.py", line 49, in <module>
+    main()
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/scripts/run_experiment.py", line 45, in main
+    train_model(model, processed_dataset, tokenizer, optimizer, scheduler, scaler, device, config)
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/src/train.py", line 87, in train_model
+    avg_train_loss = train_one_epoch(model, train_loader, optimizer, scheduler, scaler, device, epoch, config)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/src/train.py", line 51, in train_one_epoch
+    scaler.step(optimizer)
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/.venv/lib/python3.11/site-packages/torch/amp/grad_scaler.py", line 448, in step
+    self.unscale_(optimizer)
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/.venv/lib/python3.11/site-packages/torch/amp/grad_scaler.py", line 335, in unscale_
+    inv_scale = self._scale.double().reciprocal().float()
+                ^^^^^^^^^^^^^^^^^^^^
+TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.

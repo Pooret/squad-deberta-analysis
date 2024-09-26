@@ -1,0 +1,11 @@
+# config.yaml
+batch_size: 64
+model_name: 'microsoft/deberta-v3-base'
+epochs: 10
+learning_rate: 2e-5
+weight_decay: 0.001
+max_length: 512
+patience: 2
+padding: 'longest'
+stride: 128
+best_model_path: './models/experiment_1/best_model'

@@ -1,0 +1,17 @@
+{
+  "os": "macOS-14.6.1-arm64-arm-64bit",
+  "python": "3.11.4",
+  "startedAt": "2024-09-24T22:20:19.883879Z",
+  "program": "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/scripts/run_experiment.py",
+  "codePath": "scripts/run_experiment.py",
+  "git": {
+    "remote": "git@github.com:Pooret/squad-deberta-analysis.git",
+    "commit": "ca43fd4754de8d855baff09032ea616dd55bfa7b"
+  },
+  "email": "tylerjpoore@gmail.com",
+  "root": "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis",
+  "host": "Tylers-MBP",
+  "username": "tylerpoore",
+  "executable": "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/.venv/bin/python",
+  "codePathLocal": "scripts/run_experiment.py"
+}

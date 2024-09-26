@@ -1,7 +1,7 @@
-from transformers import DebertaV2TokenizerFast
-from datasets import load_dataset
+from transformers import DebertaV2TokenizerFast # change to AutoTokenizer
+from datasets import load_dataset, DatasetDict
 
-def load_data(dataset_name='squad', tokenizer_name='microsoft/deberta-v3-base'):
+def load_data(train_size = None, test_size = None, dataset_name='squad', tokenizer_name='microsoft/deberta-v3-base'):
     """
     Load the specified dataset and tokenizer.
 
@@ -14,7 +14,17 @@ def load_data(dataset_name='squad', tokenizer_name='microsoft/deberta-v3-base'):
     """
     tokenizer = DebertaV2TokenizerFast.from_pretrained(tokenizer_name)
     dataset = load_dataset(dataset_name)
-    return dataset, tokenizer
+    if train_size is not None: # fix this for error handling
+        small_train_dataset = dataset['train'].select(range(train_size))
+        small_val_dataset = dataset['validation'].select(range(test_size))
+        small_dataset = {
+        'train': small_train_dataset,
+        'validation': small_val_dataset
+            }
+        small_dataset =  DatasetDict(small_dataset)
+        return small_dataset, tokenizer
+    else:
+        return dataset, tokenizer
 
 def preprocess_data(dataset, tokenizer, max_length=512, stride=128, padding="longest"):
     """

@@ -1,0 +1,18 @@
+{"time":"2024-09-24T18:20:19.885506-04:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-24T18:20:19.885556-04:00","level":"INFO","msg":"created symlink","path":"/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/wandb/run-20240924_182019-hn448tuq/logs/debug-core.log"}
+{"time":"2024-09-24T18:20:19.88566-04:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-24T18:20:19.885671-04:00","level":"INFO","msg":"created symlink","path":"/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/wandb/run-20240924_182019-hn448tuq/logs/debug-core.log"}
+{"time":"2024-09-24T18:20:19.890517-04:00","level":"INFO","msg":"created new stream","id":"hn448tuq"}
+{"time":"2024-09-24T18:20:19.890573-04:00","level":"INFO","msg":"stream: started","id":"hn448tuq"}
+{"time":"2024-09-24T18:20:19.890573-04:00","level":"INFO","msg":"handler: started","stream_id":{"value":"hn448tuq"}}
+{"time":"2024-09-24T18:20:19.890632-04:00","level":"INFO","msg":"sender: started","stream_id":{"value":"hn448tuq"}}
+{"time":"2024-09-24T18:20:19.890666-04:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"hn448tuq"}}
+{"time":"2024-09-24T18:20:20.175513-04:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-24T18:20:20.176862-04:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-24T18:20:20.237038-04:00","level":"INFO","msg":"stream: closing","id":"hn448tuq"}
+{"time":"2024-09-24T18:20:20.237071-04:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-24T18:20:20.237099-04:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-24T18:20:20.909443-04:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"hn448tuq"}}
+{"time":"2024-09-24T18:20:20.909428-04:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"hn448tuq"}}
+{"time":"2024-09-24T18:20:20.909459-04:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"hn448tuq"}}
+{"time":"2024-09-24T18:20:20.909677-04:00","level":"INFO","msg":"stream: closed","id":"hn448tuq"}

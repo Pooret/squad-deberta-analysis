@@ -1,0 +1,16 @@
+Epoch 1/10 Training:   0%|                                                                                                                                                                    | 0/157 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/scripts/run_experiment.py", line 49, in <module>
+    main()
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/scripts/run_experiment.py", line 45, in main
+    train_model(model, processed_dataset, tokenizer, optimizer, scheduler, scaler, device, config)
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/src/train.py", line 88, in train_model
+    avg_train_loss = train_one_epoch(model, train_loader, optimizer, scheduler, scaler, device, epoch, config)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/src/train.py", line 43, in train_one_epoch
+    with torch.amp.autocast('mps'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tylerpoore/Workspace/projects/squad-deberta-analysis/.venv/lib/python3.11/site-packages/torch/amp/autocast_mode.py", line 229, in __init__
+    dtype = torch.get_autocast_dtype(device_type)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: unsupported scalarType
