@@ -1,3 +1,7 @@
+# Files still in development
+tests/
+
+
 # Python bytecode files
 __pycache__/
 *.py[cod]
