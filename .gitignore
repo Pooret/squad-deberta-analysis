@@ -54,7 +54,6 @@ data/raw/
 data/processed/
 
 # Models and large files (Will change once pre-trained model is finished)
-models/
 models/experiment_1/best_model/
 
 # WandB files 
