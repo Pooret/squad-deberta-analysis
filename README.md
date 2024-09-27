@@ -78,24 +78,43 @@ The attention visualizations help in understanding which parts of the input the 
 
 In this heatmap, darker colors represent higher attention weights. The model is focusing on tokens like "What", "is", and "red", indicating their importance in generating the answer. There is also significant attention paid to the '[SEP]` and stop tokens (e.g. '.', '?' in this case), showing that these tokens may be important in allowing the model to understand the semantics of the question and answer pair. 
 
-What is also observed is that the heads in different layers are  not all layers are equal, as we only see attention paid to the answer tokens starting at layer 6. In the earlier layers, it can be seen that the model has several patterns that are likely used to uderstand the nature of the task. For example in layer 0 head 5, the model is paying attention to the special tokens.
+What is also observed is that the heads in different layers are  not all layers are equal, as we only see attention paid to the answer tokens starting at layer 6. In the earlier layers, it can be seen that the model has several patterns that are likely used to uderstand the nature of the task. 
+
+
+### Layer 0 - Head 5: Special Tokens Attention
+
+In this visualization, we observe that in Layer 0, Head 5, the model's attention is predominantly focused on special tokens such as [CLS], [SEP], and punctuation marks. These tokens serve a crucial role in the model's understanding of the structure of the input sequence. The [CLS] token is often used to aggregate information across the entire input, while [SEP] is employed to separate distinct segments of text, such as the question and the context in a Q&A task. The heavy focus on these tokens indicates that the model is working to delineate the boundaries between different parts of the input, which is essential for correctly parsing the question and the context.
 
 <p align="center">
     <img src="models/experiment_1/attentions_vis/individual_heads/layer_0_head_5.png" alt="Layer 0 Head 5" width="400"/>
 </p>
 
+### Layer 0 - Head 10: Intra-Sentence Attention
 
-In the same layer, head 10 demonstrates another pattern where the tokens attend to individual tokens within the same sentence "e.g. "What" pays attention to "is" in the question. 
+In the same layer, Head 10 demonstrates another important pattern, where the tokens tend to focus on other tokens within the same sentence. For example, the token "What" in the question pays attention to the token "is." This type of attention helps the model maintain a coherent understanding of the relationships between words within a sentence. By focusing on the syntactic structure, the model can better understand how the words in the question relate to each other, which is crucial for accurately interpreting and answering the question.
+
 
 <p align="center">
     <img src="models/experiment_1/attentions_vis/individual_heads/layer_0_head_10.png" alt="Layer 0 Head 10" width="400"/>
 </p>
 
-Lastly we see in layer 3 - head 11 an example of cross attention, where the tokens in the question attend to tokens in the answer and vice-versa. Note that the token for 'color' in the question attends to both 'color' and 'red' in the answer.
+
+### Layer 3 - Head 11: Cross-Attention Between Question and Answer
+
+As we move deeper into the model, we observe more complex attention patterns. In Layer 3, Head 11, the attention mechanism begins to establish connections between the tokens in the question and the tokens in the context or answer. This cross-attention is vital for tasks like question-answering, where the model needs to correlate the information in the question with relevant portions of the context. For instance, in this visualization, the token "color" in the question attends to both "color" and "red" in the answer. This indicates that the model is successfully identifying and linking related concepts across the question and the context, which is essential for generating accurate answers.
 
 <p align="center">
     <img src="models/experiment_1/attentions_vis/individual_heads/layer_3_head_11.png" alt="Layer 3 Head 11" width="400"/>
 </p>
+
+### Layer 7 - Head 5: Focused Contextual Attention
+
+In Layer 7, Head 5, the attention mechanism appears to be significantly more focused on key elements within the context and question. This head shows a strong concentration on the words "color," "is," and "red," which are crucial for understanding and answering the question "What is my favorite color?". The attention paid to these words suggests that the model is actively trying to align the question with the relevant portion of the context to generate an accurate response.
+
+<p align="center"> 
+    <img src="models/experiment_1/attentions_vis/individual_heads/layer_7_head_5.png" alt="Layer 7 Head 5" width="400"/> 
+</p>
+
 ### Performance Metrics
 After training the model for 10 epochs, the model achieved the following performance on the validation set:
 
