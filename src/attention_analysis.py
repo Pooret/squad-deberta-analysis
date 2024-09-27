@@ -66,3 +66,23 @@ def visualize_attentions(attention, tokens, num_heads, layer_num, save_dir):
     file_path = os.path.join(save_dir, f'layer_{layer_num}.png')
     plt.savefig(file_path)
     plt.close()  # Close the plot to free up memory
+    
+def visualize_single_attention_head(attentions, tokens, layer_num, head_num, save_dir):
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    
+    attention_head = attentions[layer_num][0][head_num].detach().numpy()
+
+    plt.figure(figsize=(20, 16))
+    ax = plt.axes()
+    sns.heatmap(attention_head, xticklabels=tokens, yticklabels=tokens, ax=ax, cbar=False)
+    ax.set_title(f'Layer {layer_num} - Head {head_num}', fontsize=32)
+
+    ax.tick_params(axis='x', labelsize=18)
+    ax.tick_params(axis='y', labelsize=18)
+    
+    file_path = os.path.join(save_dir, f'layer_{layer_num}_head_{head_num}.png')
+    plt.tight_layout()
+    plt.savefig(file_path)
+    plt.close()  # Close the plot to free up memory
+

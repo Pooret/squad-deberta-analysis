@@ -8,7 +8,7 @@ import torch
 import yaml
 from tqdm import tqdm
 from transformers import DebertaV2TokenizerFast, DebertaV2ForQuestionAnswering # change to AutoTokenizer, AutoModelForQuestionAnswering
-from src.attention_analysis import qa_with_attended_token, visualize_attentions
+from src.attention_analysis import qa_with_attended_token, visualize_attentions, visualize_single_attention_head
 from src.utils import load_model_and_tokenizer
 
 def main():
@@ -55,14 +55,27 @@ def main():
                 attention_matrix = attentions[layer_num]
                 num_heads = attention_matrix.size(1)
 
-                tokens = tokenizer.convert_ids_to_tokens(tokenizer.encode_plus(question, response, add_special_tokens=True)['input_ids'])[:attention_matrix.size(-1)]
+                tokens = tokenizer.convert_ids_to_tokens(tokenizer.encode_plus(question, response, add_special_tokens=True)['input_ids'])[:attention_matrix.size(-1)] # ensure correct size
                 processed_tokens = [token.replace('▁', ' ').strip() for token in tokens]
-                visualize_attentions(attention_matrix[0], processed_tokens, num_heads, layer_num, save_dir=f'models/{experiment}/attentions_vis/') 
+                visualize_attentions(attention_matrix[0], processed_tokens, num_heads, layer_num, save_dir=f'models/{experiment}/attentions_vis/')
+                
             print(f"Attentions visualized. See the 'models/{experiment}/attentions_vis' directory for the visualizations.")
+            
+            indiv_attn = input("Would you like to save an individual attention head? (yes/no): ").strip().lower()
+            
+            while True: 
+                if indiv_attn == 'yes':
+                    layer_num = int(input("Enter the layer number: "))
+                    head_num = int(input("Enter the head number: "))
+                    visualize_single_attention_head(attentions, processed_tokens, layer_num, head_num, save_dir=f'models/{experiment}/attentions_vis/individual_heads/')
+                    response = input(f"Individual attention head saved at models/{experiment}/attentions_vis/individual_heads.\nWould you like to save another individual attention head? (yes/no): ")
+                    if response != 'yes':
+                        break
+                    
         else:
             print("Not visualizing attentions.")
         # Ask if the user wants to input another question/context pair
-        another = input("Do you want to analyze another pair? Do (yes/no): ").strip().lower()
+        another = input("Do you want to analyze another question answer pair? (yes/no): ").strip().lower()
         if another != 'yes':
             break
 

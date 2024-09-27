@@ -3,7 +3,6 @@
 This project implements a question-answering system using Microsoft's DeBERTa model. It includes functionalities to train the model on the SQuAD dataset, analyze the attention mechanisms within the transformer layers, and visualize these attentions to gain insights into the model's focus during inference.
 
 
-
 The way in which a model processes and understands langauge is crucial for understanding how these models work. In this project, an encoder transformer was pretrained to answer questions given some context. The folowing is a sample of the trained model's output:
 
 *Question:* What is my favorite color?  
@@ -77,10 +76,17 @@ Below is a heatmap that visualizes the attention heads in layer 7. Note that Hea
 ### Attention Visualization
 The attention visualizations help in understanding which parts of the input the model focuses on when answering a question. For example, in Layer 7, we observe that the model attends heavily to certain keywords in the context that are crucial for generating the correct answer.
 
-In this heatmap, darker colors represent higher attention weights. The model is focusing on tokens like "transformer", "layers", and "attention", indicating their importance in generating the answer.
+In this heatmap, darker colors represent higher attention weights. The model is focusing on tokens like "What", "is", and "red", indicating their importance in generating the answer. There is also significant attention paid to the '[SEP]` and stop tokens (e.g. '.', '?' in this case), showing that these tokens may be important in allowing the model to understand the semantics of the question and answer pair. 
+
+What is also observed is that the heads in different layers are  not all layers are equal, as we only see attention paid to the answer tokens starting at layer 6. In the earlier layers, it can be seen that the model has several patterns that are likely used to uderstand the nature of the task. For example in layer 0 head 5, the model is paying attention to the special tokens. ![Visualization of attention weights in Layer 0 head 5](models/experiment_1/attentions_vis/individual_heads/layer_0_head_5.png)
+
+
+In the same layer, head 10 demonstrates another pattern where the tokens attend to individual tokens within the same sentence "e.g. "What" pays attention to "is" in the question. ![Visualization of attention weights in Layer 0 head 10](models/experiment_1/attentions_vis/individual_heads/layer_0_head_10.png)
+
+Lastly we see in layer 3 - head 11 an example of cross attention, where the tokens in the question attend to tokens in the answer and vice-versa. Note that the token for 'color' in the question attends to both 'color' and 'red' in the answer. ![Visualization of attention weights in Layer 3 head 1](models/experiment_1/attentions_vis/individual_heads/layer_3_head_11.png)
 
 ### Performance Metrics
-After training the model for 10, the model achieved the following performance on the validation set:
+After training the model for 10 epochs, the model achieved the following performance on the validation set:
 
 Validation Loss: 0.788  
 Exact Match (EM): 64.8%  
