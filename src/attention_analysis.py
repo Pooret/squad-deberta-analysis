@@ -73,7 +73,7 @@ def visualize_single_attention_head(attentions, tokens, layer_num, head_num, sav
     
     attention_head = attentions[layer_num][0][head_num].detach().numpy()
 
-    plt.figure(figsize=(20, 16))
+    plt.figure(figsize=(28, 28))
     ax = plt.axes()
     sns.heatmap(attention_head, xticklabels=tokens, yticklabels=tokens, ax=ax, cbar=False)
     ax.set_title(f'Layer {layer_num} - Head {head_num}', fontsize=32)
