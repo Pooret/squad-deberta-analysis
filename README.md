@@ -5,6 +5,8 @@ This project implements a question-answering system using Microsoft's DeBERTa mo
 
 The way in which a model processes and understands langauge is crucial for understanding how these models work. In this project, an encoder transformer was pretrained to answer questions given some context. The folowing is a sample of the trained model's output:
 
+<div align="center">
+
 *Question:* What is my favorite color?  
 *Answer:* My favorite color is red.  
 
@@ -12,6 +14,7 @@ The way in which a model processes and understands langauge is crucial for under
 *Model Answer*: red  
 *Main Attended Token in Question:* What  
 
+</div>
 
 Below is a heatmap that visualizes the attention heads in layer 7. Note that Heads 4, 5, and 11 have attention from "What" in the y-axis to the "is" and "red" on the x-axis.  
 
