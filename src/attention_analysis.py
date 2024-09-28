@@ -78,8 +78,8 @@ def visualize_single_attention_head(attentions, tokens, layer_num, head_num, sav
     sns.heatmap(attention_head, xticklabels=tokens, yticklabels=tokens, ax=ax, cbar=False)
     ax.set_title(f'Layer {layer_num} - Head {head_num}', fontsize=32)
 
-    ax.tick_params(axis='x', labelsize=32)
-    ax.tick_params(axis='y', labelsize=32)
+    ax.tick_params(axis='x', labelsize=30)
+    ax.tick_params(axis='y', labelsize=30)
     
     file_path = os.path.join(save_dir, f'layer_{layer_num}_head_{head_num}.png')
     plt.tight_layout()
