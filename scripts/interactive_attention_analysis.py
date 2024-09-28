@@ -62,16 +62,17 @@ def main():
             print(f"Attentions visualized. See the 'models/{experiment}/attentions_vis' directory for the visualizations.")
             
             indiv_attn = input("Would you like to save an individual attention head? (yes/no): ").strip().lower()
-            
-            while True: 
-                if indiv_attn == 'yes':
+            if indiv_attn == 'yes':
+                
+                while True: 
                     layer_num = int(input("Enter the layer number: "))
                     head_num = int(input("Enter the head number: "))
                     visualize_single_attention_head(attentions, processed_tokens, layer_num, head_num, save_dir=f'models/{experiment}/attentions_vis/individual_heads/')
                     response = input(f"Individual attention head saved at models/{experiment}/attentions_vis/individual_heads.\nWould you like to save another individual attention head? (yes/no): ")
                     if response != 'yes':
                         break
-                    
+            else:
+                print("Not visualizing individual attention heads.")       
         else:
             print("Not visualizing attentions.")
         # Ask if the user wants to input another question/context pair
