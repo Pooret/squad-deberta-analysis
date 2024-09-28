@@ -7,12 +7,14 @@ The way in which a model processes and understands langauge is crucial for under
 
 <div align="center">
 
+<p align="left">
 *Question:* What is my favorite color?  
 *Answer:* My favorite color is red.  
-
+<br>
 *Question:* What is my favorite color?  
-*Model Answer*: red  
+*Model's Answer*: red  
 *Main Attended Token in Question:* What  
+</p>
 
 </div>
 
